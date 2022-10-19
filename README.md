@@ -7,7 +7,7 @@ An OpenAI DALLE2 App - Made with SwiftUI
 https://twitter.com/1998design/status/1582612175021277190?s=61&t=U6jwceFUGJlOkNKAIBbLrA
 
 ## Usage
-Generate image based on Query String.
+Generate images based on Query.
 
 ## Environment
 - iOS 16
