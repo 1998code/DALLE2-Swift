@@ -21,3 +21,6 @@ Generate images based on Query.
 
 ## License
 MIT
+
+## Looking for Web version?
+NextJS: https://github.com/1998code/DALLE-2-App
