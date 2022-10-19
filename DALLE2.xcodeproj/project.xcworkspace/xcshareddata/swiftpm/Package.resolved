@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "cardstack",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/notsobigcompany/CardStack",
+      "state" : {
+        "revision" : "33417ef29fdc4169712cb3b8bf0ddbd7b6ef52c5",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}

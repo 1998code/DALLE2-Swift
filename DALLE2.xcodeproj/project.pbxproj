@@ -11,6 +11,8 @@
 		3A63994D28FFB0060068621F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A63994C28FFB0060068621F /* ContentView.swift */; };
 		3A63994F28FFB0080068621F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A63994E28FFB0080068621F /* Assets.xcassets */; };
 		3A63995328FFB0080068621F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A63995228FFB0080068621F /* Preview Assets.xcassets */; };
+		3A63995A28FFB4FD0068621F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A63995928FFB4FD0068621F /* Model.swift */; };
+		3A63995D28FFB7C40068621F /* CardStack in Frameworks */ = {isa = PBXBuildFile; productRef = 3A63995C28FFB7C40068621F /* CardStack */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,7 @@
 		3A63994E28FFB0080068621F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A63995028FFB0080068621F /* DALLE2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DALLE2.entitlements; sourceTree = "<group>"; };
 		3A63995228FFB0080068621F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3A63995928FFB4FD0068621F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A63995D28FFB7C40068621F /* CardStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +58,7 @@
 			children = (
 				3A63994A28FFB0060068621F /* DALLE2App.swift */,
 				3A63994C28FFB0060068621F /* ContentView.swift */,
+				3A63995928FFB4FD0068621F /* Model.swift */,
 				3A63994E28FFB0080068621F /* Assets.xcassets */,
 				3A63995028FFB0080068621F /* DALLE2.entitlements */,
 				3A63995128FFB0080068621F /* Preview Content */,
@@ -85,6 +90,9 @@
 			dependencies = (
 			);
 			name = DALLE2;
+			packageProductDependencies = (
+				3A63995C28FFB7C40068621F /* CardStack */,
+			);
 			productName = DALLE2;
 			productReference = 3A63994728FFB0060068621F /* DALLE2.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +121,9 @@
 				Base,
 			);
 			mainGroup = 3A63993E28FFB0060068621F;
+			packageReferences = (
+				3A63995B28FFB7C40068621F /* XCRemoteSwiftPackageReference "CardStack" */,
+			);
 			productRefGroup = 3A63994828FFB0060068621F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A63995A28FFB4FD0068621F /* Model.swift in Sources */,
 				3A63994D28FFB0060068621F /* ContentView.swift in Sources */,
 				3A63994B28FFB0060068621F /* DALLE2App.swift in Sources */,
 			);
@@ -269,6 +281,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -279,7 +292,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -307,6 +320,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -317,7 +331,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -354,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A63995B28FFB7C40068621F /* XCRemoteSwiftPackageReference "CardStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/notsobigcompany/CardStack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A63995C28FFB7C40068621F /* CardStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A63995B28FFB7C40068621F /* XCRemoteSwiftPackageReference "CardStack" */;
+			productName = CardStack;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3A63993F28FFB0060068621F /* Project object */;
 }
