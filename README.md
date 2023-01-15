@@ -14,7 +14,7 @@ Generate images based on Query.
 - Xcode 14.1
 
 ## Steps
-1. Input Token (sess-xxxxx...)
+1. Input Token (sk-xxxxx...)
 2. Query in the TextField (E.g. Corgi and cat fixing the website, 8-bit pixel art)
 3. Generate images (Wait a moment)
 4. You can tap to open the image in safari and save it yourself.
