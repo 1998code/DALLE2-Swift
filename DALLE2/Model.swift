@@ -12,20 +12,8 @@ struct Model : Codable {
 }
 
 struct Result : Codable {
-    let id : String
-    let object : String
-    let created : Int
-    let generation_type : String
-    let generation : Generation
-    let task_id : String
-    let prompt_id : String
-    let is_public : Bool
+    let url: String
 }
-
-struct Generation : Codable {
-    let image_path : String
-}
-
 
 struct DImage: Identifiable, Codable {
     let id: Int

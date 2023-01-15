@@ -10,22 +10,23 @@ import CardStack
 
 struct ContentView: View {
     
-    @AppStorage("token") var token: String = "sess-xxxx"
-    @AppStorage("query") var query: String = ""
+    @AppStorage("token") var token: String = "sk-xxxx"
+    @AppStorage("prompt") var prompt: String = ""
+    @AppStorage("number") var number: Int = 3
     @State var images = [DImage]()
     @State var showTokenSheet: Bool = false
     
     var body: some View {
         NavigationView {
             VStack{
-                if token == "sess-xxxx" || token == "" {
-                    Text("Input a token first")
+                if token == "sk-xxxx" || token == "" {
+                    Label("Input a token first", systemImage: "person.badge.key")
                 }
                 else {
                     HStack {
                         Image(systemName: "rectangle.and.text.magnifyingglass")
-                            .foregroundColor(query == "" ? .gray : .primary)
-                        TextField("Search here: 3D render of a cute tropical fish in an aquarium on a dark blue background, digital art", text: $query)
+                            .foregroundColor(prompt == "" ? .gray : .primary)
+                        TextField("3D render of a cute tropical fish in an aquarium on a dark blue background, digital art", text: $prompt)
                             .font(.headline)
                     }
                     .padding()
@@ -35,7 +36,7 @@ struct ContentView: View {
                         callData()
                     }
                     Spacer()
-                    if images.isEmpty && query != "" {
+                    if images.isEmpty && prompt != "" {
                         ProgressView()
                         Spacer()
                     } else {
@@ -57,6 +58,9 @@ struct ContentView: View {
                 }
             }.padding()
             .toolbar {
+                Stepper(value: $number, in: 1...10) {
+                    Text("\(number)")
+                }
                 Button(action: { showTokenSheet = true }) {
                     Image(systemName: "person.badge.key")
                 }
@@ -72,7 +76,7 @@ struct ContentView: View {
             if token == "sess-xxxx" {
                 showTokenSheet = true
             }
-            else if query != "" {
+            else if prompt != "" {
                 callData()
             }
         }
@@ -80,7 +84,8 @@ struct ContentView: View {
     
     func callData() {
         images = [DImage]()
-        let url = URL(string: "https://dalle2.vercel.app/api/dalle2?k=\(token)&q=\(query.replacingOccurrences(of: " ", with: "%20").replacingOccurrences(of: "\"", with: "'"))")!
+        let url = URL(string: "https://dalle2.vercel.app/api/images?t=\(token)&p=\(prompt.replacingOccurrences(of: " ", with: "%20").replacingOccurrences(of: "\"", with: "'"))&n=\(number)")!
+        print(url)
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
                 print(String(describing: error))
@@ -91,7 +96,7 @@ struct ContentView: View {
                 let result = try decoder.decode(Model.self, from: data)
                 var id = 0
                 for i in result.result {
-                    images.append(DImage(id: id, url: i.generation.image_path))
+                    images.append(DImage(id: id, url: i.url))
                     id += 1
                 }
                 print(images)
