@@ -80,7 +80,7 @@ struct ContentView: View {
     
     func callData() {
         images = [DImage]()
-        let url = URL(string: "https://dalle2.vercel.app/api/dalle2?k=\(token)&q=\(query.replacingOccurrences(of: " ", with: "%20").replacingOccurrences(of: "\"", with: "'"))")!
+        let url = URL(string: "https://dalle1.vercel.app/api/dalle2?k=\(token)&q=\(query.replacingOccurrences(of: " ", with: "%20").replacingOccurrences(of: "\"", with: "'"))")!
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
                 print(String(describing: error))
